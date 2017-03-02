@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-namespace ConsoleWSctServer_Solution
+namespace Server
 {
     class Server
     {
@@ -14,11 +14,11 @@ namespace ConsoleWSctServer_Solution
             Socket sck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             sck.Bind(new IPEndPoint(0, 1994));
-           sck.Listen(0);
+            sck.Listen(0);
 
             Socket accept = sck.Accept();
 
-            byte[] buffer = Encoding.ASCII.GetBytes("Hello CLient!");
+            byte[] buffer = Encoding.ASCII.GetBytes("Hello Client!");
             accept.Send(buffer, 0, buffer.Length, 0);
 
             buffer = new byte[255];
