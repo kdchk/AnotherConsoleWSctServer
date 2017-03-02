@@ -13,9 +13,8 @@ namespace ConsoleWSctServer_Solution
 
             Socket sck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            //sck.Bind(new IPEndPoint(0, 1994));
-            sck.Bind(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 1994));
-            sck.Listen(0);
+            sck.Bind(new IPEndPoint(0, 1994));
+           sck.Listen(0);
 
             Socket accept = sck.Accept();
 
